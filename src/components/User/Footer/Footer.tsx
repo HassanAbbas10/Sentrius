@@ -35,7 +35,7 @@ const Footer: React.FC = () => {
   const links = [
     { to: "/", text: "Home" },
     { to: "/about", text: "About" },
-    { to: "/services", text: "Services" },
+    { to: "/privacy", text: "Privacy Policy" },
     { to: "/contact", text: "Contact" },
   ];
 
