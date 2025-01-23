@@ -13,38 +13,36 @@ export default {
   			sm: 'calc(var(--radius) - 4px)'
   		},
   		colors: {
-  			background: 'hsl(var(--background))',
+  			background: {
+  				primary: '#0A0F14',
+  				secondary: '#1A1F26',
+  				tertiary: '#242A33'
+  			},
   			foreground: 'hsl(var(--foreground))',
-			  blue: {
-				DEFAULT: '#1A73E8',    // Bright, vibrant blue for primary actions
-				dark: '#0D47A1',       // Deep, authoritative blue for headers and emphasis
-				hover: '#4285F4',      // Lighter, softer blue for hover states
-			  },
-			  accent: {
-				DEFAULT: '#00FFD1',    // Cyber neon teal for highlights and accents
-				hover: '#00CCAA',      // Slightly darker teal for hover states
-			  },
-			  background: {
-				primary: '#0A0F14',    // Rich, dark blue-black for main background
-				secondary: '#1A1F26',  // Slightly lighter for cards and sections
-				tertiary: '#242A33',   // Elevated components and containers
-			  },
-			  text: {
-				primary: '#E0E7FF',    // Soft, cool white for main text
-				secondary: '#8A93A6',  // Muted blue-gray for secondary text
-				accent: '#00FFD1',     // Matching neon teal for highlighted text
-			  },
-			  status: {
-				error: '#FF4D4D',      // Bright, alerting red for errors
-				warning: '#FFC107',    // High-visibility amber for warnings
-				success: '#00E676',    // Vibrant green for success states
-				info: '#1A73E8',       // Matching blue for informational messages
-			  },
-			  bordercol: {
-				DEFAULT: '#2E3744',    // Subtle, dark borders for separation
-				highlight: '#1A73E8',  // Bright blue for interactive element borders
-			  },
-
+  			blue: {
+  				DEFAULT: '#1A73E8',
+  				dark: '#0D47A1',
+  				hover: '#4285F4'
+  			},
+  			accent: {
+  				DEFAULT: 'hsl(var(--accent))',
+  				foreground: 'hsl(var(--accent-foreground))'
+  			},
+  			text: {
+  				primary: '#E0E7FF',
+  				secondary: '#8A93A6',
+  				accent: '#00FFD1'
+  			},
+  			status: {
+  				error: '#FF4D4D',
+  				warning: '#FFC107',
+  				success: '#00E676',
+  				info: '#1A73E8'
+  			},
+  			bordercol: {
+  				DEFAULT: '#2E3744',
+  				highlight: '#1A73E8'
+  			},
   			card: {
   				DEFAULT: 'hsl(var(--card))',
   				foreground: 'hsl(var(--card-foreground))'
@@ -65,10 +63,6 @@ export default {
   				DEFAULT: 'hsl(var(--muted))',
   				foreground: 'hsl(var(--muted-foreground))'
   			},
-  			accent: {
-  				DEFAULT: 'hsl(var(--accent))',
-  				foreground: 'hsl(var(--accent-foreground))'
-  			},
   			destructive: {
   				DEFAULT: 'hsl(var(--destructive))',
   				foreground: 'hsl(var(--destructive-foreground))'
@@ -82,6 +76,16 @@ export default {
   				'3': 'hsl(var(--chart-3))',
   				'4': 'hsl(var(--chart-4))',
   				'5': 'hsl(var(--chart-5))'
+  			}
+  		},
+  		animation: {
+  			'border-beam': 'border-beam calc(var(--duration)*1s) infinite linear'
+  		},
+  		keyframes: {
+  			'border-beam': {
+  				'100%': {
+  					'offset-distance': '100%'
+  				}
   			}
   		}
   	}

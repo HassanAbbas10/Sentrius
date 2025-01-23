@@ -1,4 +1,4 @@
-import { Brain, Shield, Link2, Key, GamepadIcon } from "lucide-react"
+import { Brain, Link2, Key, GamepadIcon } from "lucide-react"
 const features = [
     {
       icon: Brain,
@@ -20,11 +20,7 @@ const features = [
       title: "Gamified Learning",
       description: "Build your cybersecurity knowledge through interactive quizzes and challenges.",
     },
-    {
-      icon: Shield,
-      title: "Real-time Threat Monitoring",
-      description: "Stay protected with continuous monitoring of potential security threats.",
-    },
+  
   ]
 
 export default features
