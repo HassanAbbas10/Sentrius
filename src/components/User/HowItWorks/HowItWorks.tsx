@@ -2,7 +2,7 @@ import React from 'react'
 import { steps } from '../../../utils/features'
 const HowItWorks:React.FC = () => {
   return (
-    <section className="bg-background-primary py-16 sm:py-24">
+    <section className="bg-background-primary py-24 sm:py-28">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
       <h2 className="text-3xl font-extrabold text-text-primary sm:text-4xl text-center mb-12">
           How It Works
