@@ -1,26 +1,40 @@
-import React from 'react';
-import { LazyLoadImage } from 'react-lazy-load-image-component';
-import 'react-lazy-load-image-component/src/effects/blur.css';
+import React from "react";
 
 interface ImgProps {
-  src: string;                
-  alt: string;                
-  width?: number | string;   
-  height?: number | string;   
-  className?: string;       
-  placeholderSrc?: string;    
+  src: string; 
+  alt: string;
+  width?: number | string; 
+  height?: number | string; 
+  className?: string;
+  placeholderSrc?: string; 
+  srcSet?: string; 
+  sizes?: string; 
 }
 
-const Img: React.FC<ImgProps> = ({ src, alt, width, height, className, placeholderSrc }) => {
+const Img: React.FC<ImgProps> = ({
+  src,
+  alt,
+  width,
+  height,
+  className,
+  placeholderSrc,
+  srcSet,
+  sizes,
+}) => {
   return (
-    <LazyLoadImage
-      src={src}
-      alt={alt}
-      width={width}
-      height={height}
-      effect="blur" 
-      className={className}
-      placeholderSrc={placeholderSrc} 
+    <img
+      src={placeholderSrc || src} 
+      width={width} 
+      height={height} 
+      className={className || "w-full h-full object-cover"} 
+      loading="lazy"
+      srcSet={srcSet} 
+      sizes={sizes} 
+      onLoad={(e) => {
+        if (placeholderSrc && e.currentTarget.src !== src) {
+          e.currentTarget.src = src;
+        }
+      }}
     />
   );
 };
