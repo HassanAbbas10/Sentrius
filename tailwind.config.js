@@ -16,35 +16,34 @@ export default {
   			background: 'hsl(var(--background))',
   			foreground: 'hsl(var(--foreground))',
 			  blue: {
-				DEFAULT: '#0A84FF',    // Brighter blue for primary actions, better contrast
-				dark: '#005AC2',       // Deeper blue for headers, more authoritative
-				hover: '#339DFF',      // Lighter hover state for better feedback
+				DEFAULT: '#1A73E8',    // Bright, vibrant blue for primary actions
+				dark: '#0D47A1',       // Deep, authoritative blue for headers and emphasis
+				hover: '#4285F4',      // Lighter, softer blue for hover states
 			  },
 			  accent: {
-				DEFAULT: '#00F5B4',    // Cyber mint green for important highlights
-				hover: '#00D6A1',      // Slightly darker hover state
+				DEFAULT: '#00FFD1',    // Cyber neon teal for highlights and accents
+				hover: '#00CCAA',      // Slightly darker teal for hover states
 			  },
 			  background: {
-				primary: '#0A1929',    // Rich dark blue-black for main background
-				secondary: '#162231',  // Slightly lighter for cards/sections
-				tertiary: '#1E2A35',  // For elevated components
+				primary: '#0A0F14',    // Rich, dark blue-black for main background
+				secondary: '#1A1F26',  // Slightly lighter for cards and sections
+				tertiary: '#242A33',   // Elevated components and containers
 			  },
 			  text: {
-				primary: '#F0F6FC',    // Crisp white with slight blue tint for main text
-				secondary: '#7D8590',  // Muted blue-gray for secondary text
-				accent: '#00F5B4',     // Matching accent for highlighted text
+				primary: '#E0E7FF',    // Soft, cool white for main text
+				secondary: '#8A93A6',  // Muted blue-gray for secondary text
+				accent: '#00FFD1',     // Matching neon teal for highlighted text
 			  },
 			  status: {
-				error: '#FF453A',      // Bright red for critical alerts
-				warning: '#FFD60A',    // High-visibility yellow for warnings
-				success: '#30D158',    // Professional green for success states
-				info: '#0A84FF',       // Matching blue for info messages
+				error: '#FF4D4D',      // Bright, alerting red for errors
+				warning: '#FFC107',    // High-visibility amber for warnings
+				success: '#00E676',    // Vibrant green for success states
+				info: '#1A73E8',       // Matching blue for informational messages
 			  },
 			  bordercol: {
-				DEFAULT: '#30363D',    // Subtle borders
-				highlight: '#1C5EF5',  // Interactive element borders
+				DEFAULT: '#2E3744',    // Subtle, dark borders for separation
+				highlight: '#1A73E8',  // Bright blue for interactive element borders
 			  },
-		
 
   			card: {
   				DEFAULT: 'hsl(var(--card))',
