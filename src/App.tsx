@@ -1,8 +1,7 @@
-import Header from "./components/User/Header/Header"
+import Header from "./components/User/Header/Header";
 import Footer from "./components/User/Footer/Footer";
 import Home from "./pages/Home";
 import "./App.css";
-
 
 import { createBrowserRouter, RouterProvider, Outlet } from "react-router-dom";
 import About from "./pages/About.tsx";
@@ -10,10 +9,9 @@ import SignUp from "./pages/auth/SignUp.tsx";
 import PrivacyPol from "./pages/PrivacyPol.tsx";
 import Contact from "./pages/Contact.tsx";
 import Dashboard from "./pages/Dashboard.tsx";
-import HowItWorks from "./pages/HowItWorks.tsx";
+
 import Profile from "./pages/Profile.tsx";
 const Layout = () => {
-  
   return (
     <div className="app ">
       <Header />
@@ -23,7 +21,6 @@ const Layout = () => {
   );
 };
 
-
 const router = createBrowserRouter([
   {
     path: "/",
@@ -31,19 +28,19 @@ const router = createBrowserRouter([
     children: [
       {
         path: "/",
-        element: <Home/>,
+        element: <Home />,
       },
-    
+
       {
         path: "/about",
         element: <About />,
       },
-    
+
       {
         path: "/signup",
         element: <SignUp />,
       },
-    
+
       {
         path: "/privacy",
         element: <PrivacyPol />,
@@ -56,15 +53,11 @@ const router = createBrowserRouter([
         path: "/dashboard",
         element: <Dashboard />,
       },
-      {
-        path: "/howitworks",
-        element: <HowItWorks />,
-      },
+
       {
         path: "/profile",
         element: <Profile />,
       },
-    
     ],
   },
 ]);
