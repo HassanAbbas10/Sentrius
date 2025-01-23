@@ -1,7 +1,9 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import { Menu, X } from "lucide-react";
-
+import Img from "../../common/Img";
+import Sentrius from "../../../assets/Purple_Gradient_Modern_Cybersecurity_Logo__1_-removebg-preview.png"
+import CyberButton from "../../common/CyberButton";
 const links = [
   { to: "/", text: "Home" },
   { to: "/feature", text: "Features" },
@@ -40,9 +42,13 @@ const Header: React.FC = () => {
     <header className="bg-background-primary text-text-primary">
       <div className="container mx-auto px-4 py-6">
         <div className="flex justify-between items-center">
-          <div className="text-2xl font-bold">Sentrius</div>
+          <Img
+          alt="Sentrius"
+          src={Sentrius}
+          className="bg-transparent h-16 w-16"
+          />
 
-          {/* Desktop Navigation */}
+        
           <div className="hidden md:flex items-center space-x-16">
             {links.map((slugs) => (
               <HeaderSlugs key={slugs.to} to={slugs.to}>
@@ -52,9 +58,7 @@ const Header: React.FC = () => {
           </div>
 
           {/* Sign Up Button - Desktop */}
-          <button className="hidden md:block bg-background-tertiary border-bordercol-highlight border hover:bg-blue-600 text-white font-bold py-2 px-4 rounded-b-2xl rounded-t-lg transition duration-300">
-            Sign Up
-          </button>
+          <CyberButton>Sign Up</CyberButton>
 
           {/* Mobile Menu Button */}
           <button
@@ -92,9 +96,9 @@ const Header: React.FC = () => {
                 </HeaderSlugs>
               ))}
 
-              <button className="bg-background-tertiary border-bordercol-highlight border hover:bg-blue-600 text-white font-bold py-2 px-4 rounded-b-2xl rounded-t-lg transition duration-300 mt-4">
-                Sign Up
-              </button>
+<CyberButton>
+  Sign Up
+</CyberButton>
             </div>
           </div>
         </div>
