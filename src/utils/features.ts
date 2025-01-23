@@ -1,4 +1,4 @@
-import { Brain, Link2, Key, GamepadIcon } from "lucide-react"
+import {UserPlus, Lightbulb, ShieldCheck, Brain, Link2, Key, GamepadIcon } from "lucide-react"
 const features = [
     {
       icon: Brain,
@@ -23,4 +23,25 @@ const features = [
   
   ]
 
-export default features
+ 
+
+const steps = [
+  {
+    icon: UserPlus,
+    title: "Sign Up",
+    description: "Create your Sentrius account in minutes and start your journey to better online security.",
+  },
+  {
+    icon: Lightbulb,
+    title: "Get Tips",
+    description: "Receive personalized security recommendations based on your online behavior and habits.",
+  },
+  {
+    icon: ShieldCheck,
+    title: "Stay Protected",
+    description: "Implement our advice and use our tools to maintain a strong defense against cyber threats.",
+  },
+]
+
+
+export {features,steps}

@@ -1,9 +1,9 @@
 import React from "react";
-import features from "../../../utils/features";
+import {features} from "../../../utils/features";
 import { BorderBeam } from "../../ui/border-beam";
 const Features: React.FC = () => {
   return (
-    <section className="bg-background-primary py-16 sm:py-24">
+    <section className="bg-background-primary py-8 sm:py-12">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <h2 className="text-3xl font-extrabold text-text-primary sm:text-4xl text-center mb-12">
           Sentrius Core Features
@@ -32,10 +32,10 @@ const Features: React.FC = () => {
                   aria-hidden="true"
                 />
               </div>
-              <h3 className="text-xl font-semibold text-gray-100 mb-2">
+              <h3 className="text-xl font-semibold text-text-accent mb-2">
                 {feature.title}
               </h3>
-              <p className="text-text-accent">{feature.description}</p>
+              <p className="text-text-primary">{feature.description}</p>
             </div>
           ))}
         </div>
