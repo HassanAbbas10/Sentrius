@@ -40,7 +40,7 @@ const Footer: React.FC = () => {
   ];
 
   return (
-    <footer className="bg-background-primary text-text-primary w-full py-12">
+    <footer className="bg-gradient-to-r from-black to-background-primary text-text-primary w-full py-12">
       <div className="max-w-7xl mx-auto px-6">
         <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-3 gap-12">
           <FooterSection title="About Us">

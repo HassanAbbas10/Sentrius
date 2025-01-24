@@ -5,7 +5,7 @@ const Features: React.FC = () => {
   return (
     <section className="bg-background-primary py-8 sm:py-12">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-        <h2 className="text-3xl font-extrabold text-text-primary sm:text-4xl text-center mb-12">
+        <h2 className="text-3xl font-normal font-sans  text-text-primary sm:text-4xl text-center mb-12">
           Sentrius Core Features
         </h2>
         <div className="grid grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-4">
@@ -32,10 +32,10 @@ const Features: React.FC = () => {
                   aria-hidden="true"
                 />
               </div>
-              <h3 className="text-xl font-semibold text-text-accent mb-2">
+              <h3 className="text-xl font-semibold font-mono italic text-text-accent mb-2">
                 {feature.title}
               </h3>
-              <p className="text-text-primary">{feature.description}</p>
+              <p className="text-text-primary font-inter font-semibold">{feature.description}</p>
             </div>
           ))}
         </div>

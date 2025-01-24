@@ -7,6 +7,12 @@ export default {
   ],
   theme: {
   	extend: {
+		fontFamily: {
+			mono: ['JetBrains Mono', 'monospace'],
+			sans: ['Inter', 'system-ui'],
+		  },
+
+
   		borderRadius: {
   			lg: 'var(--radius)',
   			md: 'calc(var(--radius) - 2px)',
@@ -14,7 +20,7 @@ export default {
   		},
   		colors: {
   			background: {
-  				primary: '#0A0F14',
+  				primary: '#1a1b1e',
   				secondary: '#1A1F26',
   				tertiary: '#242A33'
   			},

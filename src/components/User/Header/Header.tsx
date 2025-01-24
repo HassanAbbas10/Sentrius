@@ -24,7 +24,7 @@ const HeaderSlugs = ({
       <Link
         to={to}
         onClick={onClick}
-        className="flex justify-center items-center text-primaryText text-lg font-medium lg:hover:text-blue-hover lg:hover:border-b-2 hover:text-text-accent border-bordercol-highlight transition-all duration-300 ease-in-out"
+        className="flex justify-center items-center text-text-primary font-mono font-mdeium italic text-lg  lg:hover:text-blue-hover lg:hover:border-b-2 hover:text-text-accent border-bordercol-highlight transition-all duration-300 ease-in-out"
       >
         {children}
       </Link>
@@ -39,7 +39,7 @@ const Header: React.FC = () => {
   const closeMenu = () => setIsMenuOpen(false);
 
   return (
-    <header className="bg-background-primary text-text-primary">
+    <header className="bg-gradient-to-r from-black to-background-primary text-text-primary">
       <div className="container mx-auto px-4 py-6">
         <div className="flex justify-between items-center">
           <Img
@@ -49,7 +49,7 @@ const Header: React.FC = () => {
           />
 
         
-          <div className="hidden md:flex items-center space-x-16">
+          <div className="hidden md:flex font-mono font-bold italic items-center space-x-16">
             {links.map((slugs) => (
               <HeaderSlugs key={slugs.to} to={slugs.to}>
                 {slugs.text}
@@ -57,20 +57,20 @@ const Header: React.FC = () => {
             ))}
           </div>
 
-          {/* Sign Up Button - Desktop */}
+          
           <CyberButton>Sign Up</CyberButton>
 
-          {/* Mobile Menu Button */}
+          
           <button
             onClick={toggleMenu}
-            className="md:hidden text-text-primary hover:text-accent-DEFAULT p-2"
+            className="md:hidden text-text-primary hover:text-text-accent p-2"
             aria-label="Toggle menu"
           >
             {isMenuOpen ? <X size={24} /> : <Menu size={24} />}
           </button>
         </div>
 
-        {/* Mobile Menu */}
+        
         <div
           className={`
             md:hidden fixed inset-0 z-50 bg-background-primary transform transition-transform duration-300 ease-in-out
@@ -82,7 +82,7 @@ const Header: React.FC = () => {
               <div className="text-2xl font-bold">Sentrius</div>
               <button
                 onClick={closeMenu}
-                className="text-text-primary hover:text-accent-DEFAULT p-2"
+                className="text-text-primary hover:text-text-accent p-2"
                 aria-label="Close menu"
               >
                 <X size={24} />

@@ -15,7 +15,7 @@ const Hero: React.FC = () => {
             <div className="absolute inset-0 bg-gradient-to-r from-gray-900/70 via-gray-800/50 to-gray-900/20"></div>
           </div>
 
-          <div className="relative z-10 text-center text-white max-w-2xl px-4">
+          <div className="relative z-10 text-center text-white max-w-2xl px-4 font-mono font-light italic">
             <h1 className="text-3xl sm:text-4xl md:text-5xl font-extrabold tracking-tight mb-4 sm:mb-6">
               Protect Your Digital World with <span className="text-blue-main">Sentrius</span>
             </h1>
