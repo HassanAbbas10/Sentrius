@@ -2,12 +2,14 @@ import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import { Menu, X } from "lucide-react";
 import Img from "../../common/Img";
-import Sentrius from "../../../assets/Purple_Gradient_Modern_Cybersecurity_Logo__1_-removebg-preview.png"
+import Sentrius from "../../../assets/Purple_Gradient_Modern_Cybersecurity_Logo__1_-removebg-preview.png";
 import CyberButton from "../../common/CyberButton";
 const links = [
   { to: "/", text: "Home" },
-  { to: "/feature", text: "Features" },
+
   { to: "/about", text: "About" },
+  { to: "/privacy", text: "Privacy Policy" },
+  { to: "/contact", text: "Contact" },
 ];
 
 const HeaderSlugs = ({
@@ -24,7 +26,7 @@ const HeaderSlugs = ({
       <Link
         to={to}
         onClick={onClick}
-        className="flex justify-center items-center text-text-primary font-mono font-mdeium italic text-lg  lg:hover:text-blue-hover lg:hover:border-b-2 hover:text-text-accent border-bordercol-highlight transition-all duration-300 ease-in-out"
+        className="flex justify-center items-center text-text-primary font-sans font-bold  text-lg  lg:hover:text-blue-hover lg:hover:border-b-2 hover:text-text-accent border-bordercol-highlight transition-all duration-300 ease-in-out"
       >
         {children}
       </Link>
@@ -40,16 +42,20 @@ const Header: React.FC = () => {
 
   return (
     <header className="bg-gradient-to-r from-black to-background-primary text-text-primary">
-      <div className="container mx-auto px-4 py-6">
+      <div className="container mx-auto py-6">
         <div className="flex justify-between items-center">
-          <Img
-          alt="Sentrius"
-          src={Sentrius}
-          className="bg-transparent h-16 w-16"
-          />
+          <div className="flex justify-center items-center gap-10">
+            <Img
+              alt="Sentrius"
+              src={Sentrius}
+              className="bg-transparent h-16 w-16"
+            />
+            <h2 className=" font-extrabold text-2xl italic font-mono">
+              Sentrius
+            </h2>
+          </div>
 
-        
-          <div className="hidden md:flex font-mono font-bold italic items-center space-x-16">
+          <div className="hidden md:flex font-serif font-bold  items-center space-x-16">
             {links.map((slugs) => (
               <HeaderSlugs key={slugs.to} to={slugs.to}>
                 {slugs.text}
@@ -57,10 +63,8 @@ const Header: React.FC = () => {
             ))}
           </div>
 
-          
           <CyberButton>Sign Up</CyberButton>
 
-          
           <button
             onClick={toggleMenu}
             className="md:hidden text-text-primary hover:text-text-accent p-2"
@@ -70,7 +74,6 @@ const Header: React.FC = () => {
           </button>
         </div>
 
-        
         <div
           className={`
             md:hidden fixed inset-0 z-50 bg-background-primary transform transition-transform duration-300 ease-in-out
@@ -96,9 +99,7 @@ const Header: React.FC = () => {
                 </HeaderSlugs>
               ))}
 
-<CyberButton>
-  Sign Up
-</CyberButton>
+              <CyberButton>Sign Up</CyberButton>
             </div>
           </div>
         </div>
