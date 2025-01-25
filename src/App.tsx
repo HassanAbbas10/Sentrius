@@ -21,6 +21,15 @@ const Layout = () => {
   );
 };
 
+const DashboardLayout = () =>{
+  return(
+    <div className="app">
+        <Outlet/>
+    </div>
+  )
+}
+
+
 const router = createBrowserRouter([
   {
     path: "/",
@@ -60,6 +69,15 @@ const router = createBrowserRouter([
       },
     ],
   },
+  {
+    path: "/dashboard",
+    element: <DashboardLayout />,
+    children: [
+      {
+        path: "/dashboard",
+        element: <Dashboard />,
+      },
+ ] }
 ]);
 
 const App = () => {
