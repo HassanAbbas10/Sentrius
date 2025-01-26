@@ -11,6 +11,8 @@ import Contact from "./pages/Contact.tsx";
 import Dashboard from "./pages/Dashboard.tsx";
 
 import Profile from "./pages/Profile.tsx";
+import Sidebar from "./components/Dashboard/Sidebar/Sidebar.tsx";
+import { SidebarProvider } from "./components/ui/sidebar.tsx";
 const Layout = () => {
   return (
     <div className="app ">
@@ -23,8 +25,16 @@ const Layout = () => {
 
 const DashboardLayout = () =>{
   return(
-    <div className="app">
-        <Outlet/>
+    <div className="app bg-background-primary">
+     <SidebarProvider>
+      <div className="app flex h-screen bg-background-primary text-text-primary">
+        <Sidebar />
+       
+      </div>
+      <div className="flex-1">
+          <Outlet />
+        </div>
+    </SidebarProvider>
     </div>
   )
 }
