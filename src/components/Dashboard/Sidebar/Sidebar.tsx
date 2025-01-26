@@ -23,14 +23,14 @@ const Sidebar: React.FC = () => {
   return (
     <div
       className={`flex flex-col h-screen bg-gray-900 text-white transition-all duration-300 ease-in-out ${
-        isExpanded ? "w-64" : "w-20"
+        isExpanded ? "w-64" : "w-20 "
       }`}
     >
       <div className="flex items-center justify-between p-4">
         <Logo isExpanded={isExpanded} />
         <button
           onClick={toggleSidebar}
-          className="p-2 rounded-lg bg-gray-800 hover:bg-gray-700 focus:outline-none focus:ring-2 focus:ring-gray-600"
+          className="p-2 rounded-full bg-gray-800 hover:bg-gray-700 focus:outline-none focus:ring-2 focus:ring-gray-600"
         >
           <Menu className="w-6 h-6" />
         </button>
