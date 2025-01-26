@@ -23,22 +23,20 @@ const Layout = () => {
   );
 };
 
-const DashboardLayout = () =>{
-  return(
+const DashboardLayout = () => {
+  return (
     <div className="app bg-background-primary">
-     <SidebarProvider>
-      <div className="app flex h-screen bg-background-primary text-text-primary">
-        <Sidebar />
-       
-      </div>
-      <div className="flex-1">
+      <SidebarProvider>
+        <div className="app flex h-screen bg-background-primary text-text-primary">
+          <Sidebar />
+        </div>
+        <div className="flex-1">
           <Outlet />
         </div>
-    </SidebarProvider>
+      </SidebarProvider>
     </div>
-  )
-}
-
+  );
+};
 
 const router = createBrowserRouter([
   {
@@ -87,7 +85,8 @@ const router = createBrowserRouter([
         path: "/dashboard",
         element: <Dashboard />,
       },
- ] }
+    ],
+  },
 ]);
 
 const App = () => {

@@ -1,7 +1,7 @@
 import React from "react"
 
-import Sidebar from "../components/Dashboard/Sidebar/Sidebar"
-import { SidebarProvider, SidebarTrigger, SidebarInset } from "../components/ui/sidebar"
+
+import {  SidebarTrigger} from "../components/ui/sidebar"
 const Dashboard:React.FC = () => {
   return (
     <div>

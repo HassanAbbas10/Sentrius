@@ -1,39 +1,51 @@
-import React from "react";
-import { Link, useLocation } from "react-router-dom";
-import {
-  Sidebar as UISidebar,
-  SidebarContent,
-  SidebarHeader,
-  SidebarMenu,
-  SidebarMenuItem,
-  SidebarMenuButton,
-} from "../../../components/ui/sidebar";
-import menuItems from "../../../utils/dashboardIcons";
+import type React from "react"
+import { useState } from "react"
+import { Menu } from "lucide-react"
+import { Shield, Key, Zap, Trophy } from "lucide-react"
+import Logo from "./Logo"
+import NavItem from "./NavItem"
+import UserProfile from "../UserProfile"
+
+const menuItems = [
+  { icon: Shield, label: "Phishing Detection", path: "/phishing-detection" },
+  { icon: Key, label: "Password Analysis", path: "/password-analysis" },
+  { icon: Zap, label: "Real-time Protection", path: "/real-time-protection" },
+  { icon: Trophy, label: "Gamified Learning", path: "/gamified-learning" },
+]
 
 const Sidebar: React.FC = () => {
-  const location = useLocation();
+  const [isExpanded, setIsExpanded] = useState(true)
+
+  const toggleSidebar = () => {
+    setIsExpanded(!isExpanded)
+  }
 
   return (
-    <UISidebar>
-      <SidebarHeader className="bg-black">
-        <h2 className="text-xl font-bold px-4 py-2">Security Dashboard</h2>
-      </SidebarHeader>
-      <SidebarContent className="bg-background-secondary">
-        <SidebarMenu>
-          {menuItems.map((item) => (
-            <SidebarMenuItem key={item.path}>
-              <SidebarMenuButton asChild isActive={location.pathname === item.path}>
-                <Link to={item.path} className="flex items-center gap-2">
-                  <item.icon className="h-5 w-5" />
-                  <span>{item.label}</span>
-                </Link>
-              </SidebarMenuButton>
-            </SidebarMenuItem>
-          ))}
-        </SidebarMenu>
-      </SidebarContent>
-    </UISidebar>
-  );
-};
+    <div
+      className={`flex flex-col h-screen bg-gray-900 text-white transition-all duration-300 ease-in-out ${
+        isExpanded ? "w-64" : "w-20"
+      }`}
+    >
+      <div className="flex items-center justify-between p-4">
+        <Logo isExpanded={isExpanded} />
+        <button
+          onClick={toggleSidebar}
+          className="p-2 rounded-lg bg-gray-800 hover:bg-gray-700 focus:outline-none focus:ring-2 focus:ring-gray-600"
+        >
+          <Menu className="w-6 h-6" />
+        </button>
+      </div>
 
-export default Sidebar;
+      <nav className="flex-grow">
+        {menuItems.map((item, index) => (
+          <NavItem key={index} icon={item.icon} label={item.label} path={item.path} isExpanded={isExpanded} />
+        ))}
+      </nav>
+
+      <UserProfile isExpanded={isExpanded} />
+    </div>
+  )
+}
+
+export default Sidebar
+
