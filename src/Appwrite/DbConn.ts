@@ -1,6 +1,7 @@
 import { Client } from 'appwrite';
 const client = new Client();
-const apiKey = import.meta.env.VITE_API_KEY;
+const apiKey = import.meta.env.;
+
 client.setProject(apiKey);
 if(apiKey === undefined){
     throw new Error;
