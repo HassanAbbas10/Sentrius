@@ -5,7 +5,7 @@ import "./App.css";
 
 import { createBrowserRouter, RouterProvider, Outlet } from "react-router-dom";
 import About from "./pages/About.tsx";
-import SignUp from "./pages/auth/SignUp.tsx";
+
 import PrivacyPol from "./pages/PrivacyPol.tsx";
 import Contact from "./pages/Contact.tsx";
 import Dashboard from "./pages/Dashboard.tsx";
@@ -14,6 +14,7 @@ import Profile from "./pages/Profile.tsx";
 import Sidebar from "./components/Dashboard/Sidebar/Sidebar.tsx";
 
 import { SidebarProvider } from "./components/ui/sidebar.tsx";
+import AuthPage from "./pages/auth/AuthPage.tsx";
 const Layout = () => {
   return (
     <div className="app ">
@@ -23,6 +24,12 @@ const Layout = () => {
     </div>
   );
 };
+
+const AuthLayout = () =>{
+  return(
+    <Outlet/>
+  )
+}
 
 const DashboardLayout = () => {
   return (
@@ -53,12 +60,6 @@ const router = createBrowserRouter([
         path: "/about",
         element: <About />,
       },
-
-      {
-        path: "/signup",
-        element: <SignUp />,
-      },
-
       {
         path: "/privacy",
         element: <PrivacyPol />,
@@ -85,6 +86,16 @@ const router = createBrowserRouter([
       {
         path: "/dashboard",
         element: <Dashboard />,
+      },
+    ],
+  },
+  {
+    path: "/login",
+    element: <AuthLayout />,
+    children: [
+      {
+        path: "/login",
+        element: <AuthPage />,
       },
     ],
   },
