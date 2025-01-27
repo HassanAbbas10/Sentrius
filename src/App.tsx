@@ -12,6 +12,7 @@ import Dashboard from "./pages/Dashboard.tsx";
 
 import Profile from "./pages/Profile.tsx";
 import Sidebar from "./components/Dashboard/Sidebar/Sidebar.tsx";
+
 import { SidebarProvider } from "./components/ui/sidebar.tsx";
 const Layout = () => {
   return (
