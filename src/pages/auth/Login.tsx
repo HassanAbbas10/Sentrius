@@ -2,6 +2,8 @@ import type React from "react"
 import { useState } from "react"
 import type { User, AuthFormProps } from "../../types/types"
 
+import { account,ID } from "../../Appwrite/DbConn"
+
 const Login: React.FC<AuthFormProps> = ({ onSubmit, isLoading }) => {
   const [user, setUser] = useState<User>({ email: "", password: "" })
 
@@ -9,11 +11,17 @@ const Login: React.FC<AuthFormProps> = ({ onSubmit, isLoading }) => {
     const { name, value } = e.target
     setUser((prevUser) => ({ ...prevUser, [name]: value }))
   }
+//TODO: need to fix them
 
-  const handleSubmit = (e: React.FormEvent) => {
-    e.preventDefault()
-    onSubmit(user)
-  }
+  // async function login(email, password) {
+  //   await account.createEmailPasswordSession(email, password);
+  //   setUser(await account.get());
+  // }
+
+  // const handleSubmit = (e: React.FormEvent) => {
+  //   e.preventDefault()
+  //   onSubmit(login(user.email,user.password))
+  // }
 
   return (
     <form onSubmit={handleSubmit} className="space-y-4">
