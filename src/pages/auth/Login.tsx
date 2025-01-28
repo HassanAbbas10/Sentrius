@@ -2,7 +2,8 @@ import type React from "react"
 import { useState } from "react"
 import type { User, AuthFormProps } from "../../types/types"
 
-import { account,ID } from "../../Appwrite/DbConn"
+import { account} from "../../Appwrite/DbConn"
+
 
 const Login: React.FC<AuthFormProps> = ({ onSubmit, isLoading }) => {
   const [user, setUser] = useState<User>({ email: "", password: "" })
@@ -11,17 +12,30 @@ const Login: React.FC<AuthFormProps> = ({ onSubmit, isLoading }) => {
     const { name, value } = e.target
     setUser((prevUser) => ({ ...prevUser, [name]: value }))
   }
-//TODO: need to fix them
 
-  // async function login(email, password) {
-  //   await account.createEmailPasswordSession(email, password);
-  //   setUser(await account.get());
-  // }
 
-  // const handleSubmit = (e: React.FormEvent) => {
-  //   e.preventDefault()
-  //   onSubmit(login(user.email,user.password))
-  // }
+
+console.log(user.name,user.password)
+
+  const handleSubmit = async (e: React.FormEvent) => {
+    e.preventDefault()
+    try {
+      await account.createEmailPasswordSession(user.email, user.password);
+      const currentUser : User = await account.get();
+
+      if (!currentUser.password) {
+        currentUser.password = '';
+      }
+      setUser(currentUser);
+      if(onSubmit){
+        onSubmit(currentUser)
+      }
+    } catch (error) {
+      console.error("Login failed",error);
+      alert("Login has failed . Please check youe email and password")
+    }
+    
+  }
 
   return (
     <form onSubmit={handleSubmit} className="space-y-4">
