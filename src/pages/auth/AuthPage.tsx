@@ -42,7 +42,7 @@ const AuthPage: React.FC = () => {
         {matrix.map((char, index) => (
           <span
             key={index}
-            className="text-green-500 text-xs"
+            className="text-blue-500 text-xs"
             style={{
               position: "absolute",
               left: `${Math.random() * 100}%`,
@@ -55,7 +55,7 @@ const AuthPage: React.FC = () => {
         ))}
       </div>
       <div className="sm:mx-auto sm:w-full sm:max-w-md relative z-10">
-        <h2 className="mt-6 text-center text-3xl font-extrabold text-green-500">
+        <h2 className=" text-center text-3xl font-extrabold text-green-500">
           {isLogin ? "Access Sentriuss" : "Join Sentriuss Network"}
         </h2>
       </div>

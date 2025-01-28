@@ -2,6 +2,7 @@ import type React from "react"
 import { useState } from "react"
 import type { User, AuthFormProps } from "../../types/types"
 import AvatarUpload from "./AvatarUpload"
+import { account } from "../../Appwrite/DbConn"
 
 const SignupForm: React.FC<AuthFormProps> = ({ onSubmit, isLoading }) => {
   const [user, setUser] = useState<User>({ email: "", password: "", name: "" })
@@ -11,9 +12,22 @@ const SignupForm: React.FC<AuthFormProps> = ({ onSubmit, isLoading }) => {
     setUser((prevUser) => ({ ...prevUser, [name]: value }))
   }
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async(e: React.FormEvent) => {
     e.preventDefault()
-    onSubmit(user)
+  
+      try {
+        console.log("Submitting user: ", user);
+        await account.create("unique()",user.email || "" , user.password || "", user.name || "");
+        alert ("Account creted sucessfully");
+        if (onSubmit) {
+          onSubmit(user);
+        }
+      } catch (error) {
+        console.error("Signup failed",error);
+        alert("Users signup has been failed")
+      }
+
+
   }
 
   const handleFileSelect = (file: File) => {

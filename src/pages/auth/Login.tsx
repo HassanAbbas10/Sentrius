@@ -1,43 +1,42 @@
-import type React from "react"
-import { useState } from "react"
-import type { User, AuthFormProps } from "../../types/types"
+import type React from "react";
+import { useState } from "react";
+import type { User, AuthFormProps } from "../../types/types";
 
-import { account} from "../../Appwrite/DbConn"
-
+import { account } from "../../Appwrite/DbConn";
 
 const Login: React.FC<AuthFormProps> = ({ onSubmit, isLoading }) => {
-  const [user, setUser] = useState<User>({ email: "", password: "" })
+  const [user, setUser] = useState<User>({ email: "", password: "" });
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-    const { name, value } = e.target
-    setUser((prevUser) => ({ ...prevUser, [name]: value }))
-  }
+    const { name, value } = e.target;
+    setUser((prevUser) => ({ ...prevUser, [name]: value }));
+  };
 
-
-
-console.log(user.name,user.password)
+  console.log(user.email, user.password);
 
   const handleSubmit = async (e: React.FormEvent) => {
-    e.preventDefault()
+    e.preventDefault();
     try {
-      await account.createEmailPasswordSession(user.email, user.password);
-      const currentUser : User = await account.get();
+      await account.createEmailPasswordSession(user.email || "", user.password || "");
+      const currentUser: User = await account.get();
 
       setUser(currentUser);
-      if(onSubmit){
-        onSubmit(currentUser)
+      if (onSubmit) {
+        onSubmit(currentUser);
       }
     } catch (error) {
-      console.error("Login failed",error);
-      alert("Login has failed . Please check youe email and password")
+      console.error("Login failed", error);
+      alert("Login has failed . Please check youe email and password");
     }
-    
-  }
+  };
 
   return (
     <form onSubmit={handleSubmit} className="space-y-4">
       <div>
-        <label htmlFor="email" className="block text-sm font-medium text-green-400 mb-2">
+        <label
+          htmlFor="email"
+          className="block text-sm font-medium text-green-400 mb-2"
+        >
           Secure Email
         </label>
         <input
@@ -52,7 +51,10 @@ console.log(user.name,user.password)
         />
       </div>
       <div>
-        <label htmlFor="password" className="block text-sm font-medium text-green-400 mb-2">
+        <label
+          htmlFor="password"
+          className="block text-sm font-medium text-green-400 mb-2"
+        >
           Encryption Key
         </label>
         <input
@@ -74,8 +76,7 @@ console.log(user.name,user.password)
         {isLoading ? "Verifying..." : "Establish Secure Connection"}
       </button>
     </form>
-  )
-}
+  );
+};
 
-export default Login
-
+export default Login;
