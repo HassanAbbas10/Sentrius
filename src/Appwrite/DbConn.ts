@@ -1,9 +1,11 @@
 import { Client, Account } from "appwrite";
 
 
-const projectID = import.meta.env.VITE_APPWRITE_SECRET_KEY;
+const projectID = import.meta.env.VITE_APPWRITE_PROJECT_ID;
 const apiKey = import.meta.env.VITE_APPWRITE_SECRET_KEY;
 const projectEndpoint = import.meta.env.VITE_APPWRITE_ENDPOINT;
+
+
 const client = new Client()
 .setEndpoint(projectEndpoint).
 setProject(projectID);

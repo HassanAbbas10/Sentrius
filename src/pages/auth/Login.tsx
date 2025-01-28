@@ -23,9 +23,6 @@ console.log(user.name,user.password)
       await account.createEmailPasswordSession(user.email, user.password);
       const currentUser : User = await account.get();
 
-      if (!currentUser.password) {
-        currentUser.password = '';
-      }
       setUser(currentUser);
       if(onSubmit){
         onSubmit(currentUser)
