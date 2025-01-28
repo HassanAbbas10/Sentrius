@@ -1,7 +1,8 @@
 import type React from "react";
 import { useState } from "react";
 import { ChevronDown, LogOutIcon, Settings2Icon, User2 } from "lucide-react";
-
+import { account } from "../../Appwrite/DbConn";
+import { useNavigate } from "react-router-dom";
 interface UserProfileProps {
   isExpanded: boolean;
 }
@@ -12,6 +13,20 @@ const UserProfile: React.FC<UserProfileProps> = ({ isExpanded }) => {
   const toggleMenu = () => {
     setIsMenuOpen(!isMenuOpen);
   };
+
+  const navigate = useNavigate();
+  const handleLogout = async () => {
+    try {
+      // Delete the current session
+      await account.deleteSession("current");
+      console.log("User logged out successfully.");
+      navigate("/login"); 
+    } catch (error) {
+      console.error("Logout failed:", error);
+      alert("An error occurred during logout. Please try again.");
+    }
+  };
+
 
   return (
     <div className="relative p-4 border-t border-gray-700">
@@ -52,7 +67,7 @@ const UserProfile: React.FC<UserProfileProps> = ({ isExpanded }) => {
             Settings
           </a>
           <a
-            href="/logout"
+            onClick={handleLogout}
             className="flex items-center px-4 py-2 text-sm text-gray-300 hover:bg-gray-700"
           >
             <LogOutIcon className="w-4 h-4 mr-2" />
