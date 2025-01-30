@@ -15,6 +15,7 @@ import Sidebar from "./components/Dashboard/Sidebar/Sidebar.tsx";
 
 import { SidebarProvider } from "./components/ui/sidebar.tsx";
 import AuthPage from "./pages/auth/AuthPage.tsx";
+import PasswordAnalysis from "./pages/Dashboard/PasswordAnalysis.tsx";
 const Layout = () => {
   return (
     <div className="app ">
@@ -84,11 +85,19 @@ const router = createBrowserRouter([
     element: <DashboardLayout />,
     children: [
       {
-        path: "/dashboard",
+        path: "",
         element: <Dashboard />,
-      },
+      
+      children: [
+        {
+          path: "pass-analysis",  // relative path
+          element: <PasswordAnalysis />,
+        },
+      ],
+    }
     ],
   },
+
   {
     path: "/login",
     element: <AuthLayout />,

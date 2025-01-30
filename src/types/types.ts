@@ -9,4 +9,6 @@ export interface User {
     onSubmit: (user: User) => void
     isLoading: boolean
   }
-  
+export  interface UserProfileProps {
+    isExpanded: boolean;
+  }
