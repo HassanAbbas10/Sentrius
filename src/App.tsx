@@ -85,16 +85,13 @@ const router = createBrowserRouter([
     element: <DashboardLayout />,
     children: [
       {
-        path: "",
+        index: true, 
         element: <Dashboard />,
-      
-      children: [
-        {
-          path: "pass-analysis",  // relative path
-          element: <PasswordAnalysis />,
-        },
-      ],
-    }
+      },
+      {
+        path: "pass-analysis", 
+        element: <PasswordAnalysis />,
+      },
     ],
   },
 

@@ -33,7 +33,7 @@ const Dashboard: React.FC = () => {
               <h2 className="text-xl font-semibold mb-2">Security Scan</h2>
               <p className="text-gray-400 mb-4">Run security scan</p>
               <button
-              onClick={()=>{navigate('./pass-analysis')}}
+              onClick={()=>{navigate('./sec-scan')}}
               className="bg-blue-600 hover:bg-blue-700 text-white px-6 py-2 rounded-lg w-full">
                 Start Scan
               </button>
@@ -44,7 +44,9 @@ const Dashboard: React.FC = () => {
               <Lock className="h-12 w-12 text-purple-400 mb-4" />
               <h2 className="text-xl font-semibold mb-2">Password Analysis</h2>
               <p className="text-gray-400 mb-4">Check password strength</p>
-              <button className="bg-purple-600 hover:bg-purple-700 text-white px-6 py-2 rounded-lg w-full">
+              <button 
+              onClick={()=>{navigate('./pass-analysis')}}
+              className="bg-purple-600 hover:bg-purple-700 text-white px-6 py-2 rounded-lg w-full">
                 Analyze Password
               </button>
             </div>
@@ -88,9 +90,9 @@ const Dashboard: React.FC = () => {
             </div>
           </div>
 
-          {/* Recent Activity & Learning Progress */}
+          
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
-            {/* Learning Progress Chart */}
+            
             <div className="bg-gray-800 p-6 rounded-lg">
               <h2 className="text-xl font-semibold mb-4">Learning Progress</h2>
               <div className="h-[300px]">

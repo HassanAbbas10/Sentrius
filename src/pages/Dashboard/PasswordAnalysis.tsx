@@ -9,11 +9,11 @@ const PasswordAnalysis: React.FC = () => {
   const calculateStrength = (pass: string) => {
     let score = 0;
     
-    // Length check
+  
     if (pass.length >= 8) score += 20;
     if (pass.length >= 12) score += 10;
     
-    // Character variety checks
+  
     if (/[A-Z]/.test(pass)) score += 20;
     if (/[a-z]/.test(pass)) score += 20;
     if (/[0-9]/.test(pass)) score += 15;
@@ -49,7 +49,6 @@ const PasswordAnalysis: React.FC = () => {
         </header>
         
         <main className="p-6 max-w-4xl mx-auto space-y-6">
-          {/* Password Input Section */}
           <div className="bg-gray-800 p-6 rounded-lg">
             <div className="flex items-center justify-center mb-6">
               <Lock className="h-12 w-12 text-purple-400" />
@@ -70,8 +69,6 @@ const PasswordAnalysis: React.FC = () => {
               </button>
             </div>
           </div>
-
-          {/* Strength Meter */}
           <div className="bg-gray-800 p-6 rounded-lg">
             <h2 className="text-xl font-semibold mb-4">Password Strength</h2>
             <div className="space-y-4">
@@ -87,8 +84,6 @@ const PasswordAnalysis: React.FC = () => {
               </div>
             </div>
           </div>
-
-          {/* Requirements Checklist */}
           <div className="bg-gray-800 p-6 rounded-lg">
             <h2 className="text-xl font-semibold mb-4">Password Requirements</h2>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
@@ -111,8 +106,6 @@ const PasswordAnalysis: React.FC = () => {
               ))}
             </div>
           </div>
-
-          {/* Security Tips */}
           <div className="bg-gray-800 p-6 rounded-lg">
             <h2 className="text-xl font-semibold mb-4">Security Tips</h2>
             <div className="space-y-4">
