@@ -96,11 +96,11 @@ const router = createBrowserRouter([
   },
 
   {
-    path: "/login",
+    path: "/auth",
     element: <AuthLayout />,
     children: [
       {
-        path: "/login",
+        path: "/auth",
         element: <AuthPage />,
       },
     ],

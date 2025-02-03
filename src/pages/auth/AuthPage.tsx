@@ -29,9 +29,9 @@ const AuthPage: React.FC = () => {
 
   const handleSubmit = async (user: User) => {
     setIsLoading(true)
-    // Implement your authentication logic here
+   
     console.log("Submitting:", user)
-    // Simulate API call
+   
     await new Promise((resolve) => setTimeout(resolve, 1000))
     setIsLoading(false)
   }
